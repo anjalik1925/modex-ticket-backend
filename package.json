@@ -1,6 +1,7 @@
 ﻿{
   "name": "modex-ticket-backend",
   "version": "1.0.0",
+  "type": "module",
   "main": "src/app.js",
   "description": "High-concurrency Ticket Booking Backend for Modex Assessment",
   "author": "Anjali",
