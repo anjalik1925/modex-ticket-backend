@@ -1,0 +1,27 @@
+﻿{
+  \"info\": { \"name\": \"Modex Ticket Backend\", \"schema\": \"https://schema.getpostman.com/json/collection/v2.1.0/collection.json\" },
+  \"item\": [
+    {
+      \"name\": \"Create Show\",
+      \"request\": {
+        \"method\": \"POST\",
+        \"header\": [{ \"key\": \"Content-Type\", \"value\": \"application/json\" }],
+        \"body\": { \"mode\": \"raw\", \"raw\": \"{ \\\"name\\\": \\\"Bus 101\\\", \\\"start_time\\\": \\\"2025-12-12 10:00\\\", \\\"total_seats\\\": 40 }\" },
+        \"url\": \"http://localhost:3000/api/admin/shows\"
+      }
+    },
+    {
+      \"name\": \"List Shows\",
+      \"request\": { \"method\": \"GET\", \"url\": \"http://localhost:3000/api/shows\" }
+    },
+    {
+      \"name\": \"Book Ticket\",
+      \"request\": {
+        \"method\": \"POST\",
+        \"header\": [{ \"key\": \"Content-Type\", \"value\": \"application/json\" }],
+        \"body\": { \"mode\": \"raw\", \"raw\": \"{ \\\"user_id\\\": \\\"anjali\\\", \\\"seats_requested\\\": 1 }\" },
+        \"url\": \"http://localhost:3000/api/shows/1/book\"
+      }
+    }
+  ]
+}
