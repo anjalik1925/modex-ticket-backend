@@ -1,20 +1,13 @@
-const express = require("express");
-const app = express();
-require("dotenv").config();
+import express from "express";
+import dotenv from "dotenv";
+import showRoutes from "./routes/shows.js";
 
+dotenv.config();
+
+const app = express();
 app.use(express.json());
 
-const showRoutes = require("./routes/shows");
-const bookingRoutes = require("./routes/bookings");
+app.use("/api", showRoutes);
 
-app.use("/api/admin/shows", showRoutes);
-app.use("/api/shows", showRoutes);
-app.use("/api/shows", bookingRoutes);
-
-if (process.env.EXPIRE_WORKER === "true") {
-  require("./workers/expireBookings");
-}
-
-app.listen(process.env.PORT, () =>
-  console.log(`Server running on ${process.env.PORT}`)
-);
+const PORT = process.env.PORT || 10000;
+app.listen(PORT, () => console.log("Server running on", PORT));
